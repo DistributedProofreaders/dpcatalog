@@ -5,6 +5,9 @@
 // Replace the identifiers delimited by double angle brackets with
 // the values appropriate to the local installation.
 
+    // Character set
+    $charset = 'ISO-8859-1';
+
     // Name of this site
     $site_name = _("<<SITE_NAME>>");
 

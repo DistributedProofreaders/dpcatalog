@@ -33,6 +33,17 @@ $templatePath = $relPath;
 
 // Pull in the various includes
 require_once($relPath.'config.inc');        // Site variables
+
+if(!headers_sent())
+{
+    header("Content-Type: text/html; charset=$charset");
+
+    // Tell proxies to vary the caching based on the Accept-Language header
+    // to ensure others behind the proxy don't inadvertantly get a language
+    // they aren't expecting.
+    header("Vary: Accept-Language");
+}
+
 require_once($relPath.'misc.inc');          // Useful generic functions
 require_once($relPath.'connect.inc');       // db. Also pulls in udb_user.php
 require_once($relPath.'PageHtml.class');    // Page templating functions
