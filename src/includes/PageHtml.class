@@ -1,0 +1,32 @@
+<?php
+
+class HtmlTemplate
+{
+    var $template;
+    var $html;
+    var $parameters = array();
+
+    function IdentifyTemplate ($template)
+    {
+        $this->template = $template;
+    }
+
+    function SetParameter ($variable, $value)
+    {
+        $this->parameters[$variable] = $value;
+    }
+
+    function CreatePage ()
+    {
+        $this->html = implode("", (file($this->template)));
+
+        foreach ($this->parameters as $key=>$value)
+        {
+            // Loop through parameters and set variables to values
+            $template_name = '{'.$key.'}';
+            $this->html = str_replace($template_name, $value, $this->html);
+        }
+        echo $this->html;
+    }
+}
+?>

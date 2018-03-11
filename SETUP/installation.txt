@@ -1,0 +1,139 @@
+Instructions for Installing/Upgrading the Open Library System website code
+
+The instructions in this file assume that you're using a release tarball from
+OLS's Project Page on SourceForge:
+    http://sourceforge.net/projects/openls/
+If you're installing/upgrading from CVS, it's trickier.
+
+=======================================================================
+Installing from scratch
+-----------------------
+
+This section assumes that you don't have an existing installation of OLS
+If you're upgrading from a previous version, see the upgrade section.
+
+--- Install PHP.
+        Version: We know that the code runs on version 5.3.x.
+
+        Enable the CLI for running installation scripts, cron jobs and
+        any future upgrade scripts.
+
+        php.ini:
+            No known requirements/dependencies.
+
+--- Install MySQL.
+        Version: We know that our queries work on 5.5.x.
+        We believe that they'll work on any version from 4.0.14 up.
+
+        In the examples in this document, we will assume that the mysql server
+        is on "localhost", i.e. the same host on which you are running these
+        commands, and the same host that runs the webserver.
+
+--- Install gettext and xgettext.
+        If you want to localize the site messages. Note that this functionality
+        is not yet fully implemented in the OLS code.
+
+--- Choose names for various MySQL items:
+        --- the OLS database (to house the OLS data);
+        --- the OLS user (to handle all OLS queries);
+        --- the OLS user's password.
+
+    Don't choose a password that contains an apostrophe (single-quote),
+    as it confuses the code.
+
+    In the examples in this document, we will use
+        ols_db
+        ols_user
+        ols_password
+    for these three items. You may wish to choose names that are harder for
+    others to guess (especially for the password!).
+
+--- Set up MySQL to create the database and user:
+        There are various ways to do each of these.
+        We'll show how to do it using the mysql client.
+
+    --- Connect to the MySQL server as the root user, or any sufficiently
+        powerful user.
+            mysql -h localhost -u root -p
+
+    --- Create the database.
+            CREATE DATABASE ols_db;
+        If you have MySQL 4.1.1 or higher:
+            CREATE DATABASE ols_db CHARACTER SET UTF8;
+        Note that you can have UTF-8 enabled on the site even if you have an
+        older MySQL version which doesn't support it.
+
+    --- Create the user.
+        (See MySQL Manual 5.5.4 Adding New Users to MySQL.)
+            GRANT ALL ON ols_db.* TO ols_user@localhost IDENTIFIED BY 'ols_password';
+   
+    --- Exit from the mysql client.
+            quit;
+
+--- Unpack the OLS code.
+        Somewhere within your server's document hierarchy (possibly, though not
+        necessarily, in the document root) unpack the OLS code. Here, we will
+        assume a directory under the document root named 'ols'.
+
+--- Configure the OLS code (with site-specific settings).
+        This requires manual editing of the values in:
+            includes/config.inc
+            includes/udb_user.php
+        Follow the instructions given in those files.
+
+--- Create the tables of the OLS database.
+        cd SETUP
+        php -f install_db.php
+
+--- Move the SETUP directory out of your web server's document hierarchy.
+
+--- At this point, your OLS site should be functional.
+        Try visiting it via your browser.
+        Of course, there aren't any projects in the catalog yet.
+
+=======================================================================
+Upgrading
+---------
+
+This section assumes that you have an existing installation of OLS, and
+that it has data that you want to bring forward as you upgrade to a
+newer release of the OLS code.
+
+--- Back up your data.
+
+--- Move the old code aside.
+        mv ols ols.old
+    (Don't remove it just yet. It may have files you need.)
+
+--- Create a new 'ols' directory and unpack the new OLS code in it.
+
+--- Configure the new OLS code with your site-specific settings.
+    (Follow the instructions above in the 'Installing from scratch' section.)
+
+--- Upgrade your database schema and data, if necessary.
+    This usually involves running PHP scripts from the command-line.
+
+    Currently there are no upgrade scripts necessary, although this may
+    change with future releases.
+
+    Upgrade scripts will be added under the SETUP directory and include
+    specific instructions.
+
+    To run the upgrade scripts, you must cd into the directory and invoke the
+    scripts from there. E.g.:
+        
+            cd ols/SETUP/upgrade/01/
+            php -f some_upgrade_script.php
+            ...
+
+    It's a good idea to log the shell I/O (e.g., using the 'script' command),
+    as this may help diagnose any problems you have.
+
+    The order in which you invoke the scripts shouldn't matter.
+
+    Each script will print 'Done!' if it completes without fatal errors.
+
+--- At this point, your OLS site should be functional again.
+
+=======================================================================
+# vim: ts=4 sw=4 expandtab ai

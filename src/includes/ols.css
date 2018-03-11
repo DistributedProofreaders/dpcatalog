@@ -1,0 +1,381 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-family: "Verdana", "Helvetica", sans-serif;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set up our preferences now that we've done a (modified) reset above */
+
+html { min-height: 100vh; }
+
+html *
+{
+    font-family: "Verdana", "Helvetica", sans-serif;
+}
+
+body
+{
+    background: #333333;
+    padding: 15px;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+h1,h2
+{
+    padding: 5px 0 5px 0;
+    margin-bottom: 10px;
+    background-color: rgba(255, 248, 220, 0.25); /* FFF8DC, aka cornsilk */
+}
+
+h1
+{
+    color: #fff;
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -0.04em;
+}
+
+h2
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+h3
+{
+    margin: 0 0 10px 0;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a         { color: #3d70a7; text-decoration: underline; }
+a:visited { color: #0a4c92; }
+a:active  { color: #b2dbf8; }
+
+table {
+    border: none;
+    border-collapse: collapse;
+    clear: both;
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+td {
+    color: black;
+    background-color: rgba(255, 248, 220, 0.5); /* FFF8DC, aka cornsilk */
+    padding: 0 2px 0 2px;
+    vertical-align: top;
+    text-align: left;
+}
+td.right { padding-right: 1em; }
+
+th
+{
+    font-weight: bold;
+    vertical-align: top;
+    padding: 0 2px 0 2px;
+    color: black;
+    background-image: url(../graphics/cloth_texture.png);
+    background-color: #d8ac7f;
+}
+th.right { padding-right: 1em; }
+
+
+/* ================================================================= */
+/* Definitions for the common PageTemplate */
+
+div#subheader h2
+{
+    padding: 0 0 10px 0;
+    margin: 0;
+    color: #fff;
+}
+
+div#metacontainer
+{
+    color: black;;
+    background-color: white;
+    background: url('../graphics/paper_back.jpg') top left repeat;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    border: 1px solid #333333;
+}
+
+div#container
+{
+    color: black;;
+    background-color: white
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+div#header
+{
+    background-color: black;
+    color: white;
+    height: 72px;
+    color: white;
+}
+
+div#subheader
+{
+    background: url('../graphics/shade_bar.gif') top left repeat-x;
+    padding: 11px 0 0 0;
+}
+
+ul#navigation
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul#navigation li
+{
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 8px 10px 8px 10px;
+    color: #ffffff;
+    font-size: 0.9em;
+    border-bottom: 1px solid #000;
+    background-image: url(../graphics/cloth_texture.png);
+    background-color: #a26e3c;
+    box-shadow: 3px 3px 2px #333333;
+}
+
+ul#navigation li a
+{
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+ul#navigation li.active
+{
+    font-weight: bold;
+    background-image: url(../graphics/cloth_texture.png);
+    background-color: #d8ac7f;
+    box-shadow: 3px 3px 2px #333333;
+}
+
+div#content
+{
+    clear: both;
+    color: black;
+    padding: 18px 25px 18px 25px;
+    line-height: 1.5em;
+}
+
+div#search
+{
+    float: right;
+    color: black;
+    padding: 10px 5px 0 0;
+}
+
+div#subcontent
+{
+    background: #5f3a1d url('../graphics/shade_bar.gif') top left repeat-x;
+    padding: 15px 25px 5px 25px;
+    color: #b0b0b0;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+div#footer
+{
+    background: #000000;
+    height: 72px;
+    border-top: 1px #333333 solid;
+    padding-left: 25px;
+    color: #a5a5a5;
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+div#footer a, div#footer a:active, div#footer a:visited
+{
+    font-weight: bold;
+    color: #808080;
+    text-decoration: none;
+}
+
+div#footer a:hover
+{
+    text-decoration: underline;
+}
+
+div#footer h3
+{
+    margin-top: 5px;
+}
+
+img#footer_img
+{
+    float: right;
+}
+
+.center { text-align: center; }
+.left   { text-align: left; }
+.right  { text-align: right; }
+.tiny   { font-size: 0.75em; }
+
+/* ================================================================= */
+/* display.php
+   Page image display and navigation */
+table#pagenav
+{
+    width: 50%;
+    margin-bottom: 3px;
+}
+
+table#pagenav td {
+    width: 12.5%;
+    vertical-align: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+}
+
+table#pagenav td.nav_large { width: 25%; }
+
+form#jumpbox * { }
+
+img.pageimage
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+/* ================================================================= */
+/* biblio.php */
+
+table.biblio
+{
+    width: 75%;
+}
+.biblio
+{
+    margin-top: 25px;
+}
+table.biblio th
+{
+    width: 25%;
+}
+table.biblio td
+{
+    font-size: 1.2em;
+}
+table.biblio td.btitle
+{
+    font-family: serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-top: 3px double black;
+}
+
+/* ================================================================= */
+/* browse.php and search.php */
+
+table#browse, table#search_table
+{
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    border: none;
+    border-collapse: collapse;
+    clear: both;
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+table#browse td
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table#search_table td
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+th#pg     { width: 10%; }
+th#title  { width: 60%; }
+th#author { width: 30%; }
+
+div#pagination_header   { font-size: 18px; text-align: left;  float: left;}
+div#pagination_controls { font-size: 18px; text-align: right; float: right; }
+div#pagination_controls > a{ color:#06F; text-decoration: none; }
+div#pagination_controls > a:visited { color:#06F; text-decoration: none; }
+
+/* Handy color definitions */
+
+.highlight { color: darkred; font-weight: bold; }
+
+/* The palettes below are based on the paper texture background image */
+
+/* Medium color palette, light-to-dark */
+.med_color1 { background-color: #d8ac7f;}
+.med_color2 { background-color: #c69260;}
+.med_color3 { background-color: #a26e3c;}
+.med_color4 { background-color: #5f3a1d;}
+
+/* Light color palette, light-to-dark */
+.light_color1 { background-color: #ecd6bf;}
+.light_color2 { background-color: #e3c9b0;}
+.light_color3 { background-color: #d1b79e;}
+.light_color4 { background-color: #af9d8e;}
+
+/* ================================================================= */
+

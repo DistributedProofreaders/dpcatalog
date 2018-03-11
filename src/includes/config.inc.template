@@ -1,0 +1,77 @@
+<?php
+// Variables (which may be treated like constants) whose values are
+// specific to the local installation of the code.
+
+// Replace the identifiers delimited by double angle brackets with
+// the values appropriate to the local installation.
+
+    // Name of this site
+    $site_name = _("<<SITE_NAME>>");
+
+    // Site name abbreviation
+    $site_abbr = _("<<SITE_ABBREVIATION>>");
+
+    // Base URL for this site (without trailing slash)
+    $site_base="<<SITE_BASE_URL>>";
+
+    // Base filesystem path to the archive files
+    // This value is prefixed to the value of the `page_image_location` field
+    // in the catalog table for an archived item.
+    // The result is treated as the full absolute path to all of the files
+    // for that item.
+    // If the paths stored in your database are already absolute, this value
+    // should be set to ''.
+    //
+    $archive_paths_prefix = '<<ARCHIVE_PATH_PREFIX>>';
+
+    // Archive page images subdirectory
+    // This value is suffixed to the value of the `page_image_location` field
+    // in the catalog table for an archived item.
+    // The result is treated as the full absolute path to the directory which
+    // contains ONLY the page images for that item.
+    //
+    $archive_pages_subdir = '<<ARCHIVE_PAGES_SUBDIR>>';
+
+    // Base URL for the "parent" site
+    // This should be set to the URL of the organization which produces the
+    // files stored in your archive,
+    // e.g. "http://archive.mysite.org"
+    //
+    $parent_url="<<PARENT_SITE_BASE_URL>>";
+
+    // Name of the "parent" site
+    // This should be set to the formal name of the organization given above.
+    //
+    $parent_name=_("<<PARENT_SITE_NAME>>");
+
+    // Abbreviated name of the "parent" site
+    // The abbreviated formal name of the organization given above.
+    //
+    $parent_abbr=_("<<PARENT_SITE_ABBR>>");
+
+    // Base URL for Project Gutenberg
+    $pg_url="https://www.gutenberg.org/";
+
+    // Name of Project Gutenberg
+    $pg_name=_("Project Gutenberg");
+
+    // Absolute filesystem path for the PG catalog RDF files
+    // Set this variable to "" if you do not have a local copy
+    // of the PG Catalog in RDF form.
+    // See https://www.gutenberg.org/wiki/Gutenberg:Feeds for
+    // more information.
+    //
+    $pg_catalog_dir = "<<PG_RDF_CATALOG_DIR>>";
+
+    // Disclaimer text to display in the PageTemplate PageSubContent field.
+    //
+    $site_disclaimer = "<p>"
+    . _("Disclaimer: All services, information, products, and other content
+    included in or accessible from this site are provided 'as-is,' 'with all
+    faults' and 'as available,' without warranty of any kind (express, implied,
+    and statutory, including but not limited to the implied warranties of
+    merchantability and fitness for a particular purpose), all of which are
+    expressly disclaimed to the fullest extent permitted by law.")
+    . "</p>";
+
+// vim: sw=4 ts=4 expandtab

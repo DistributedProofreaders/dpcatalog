@@ -1,0 +1,8 @@
+<?php
+class db_udb_user
+{
+    var $server   = '<<HOSTNAME>>';
+    var $username = '<<DB_USERNAME>>';
+    var $password = '<<DB_PASSWORD>>';
+    var $dbname   = '<<DB_NAME>>';
+}
