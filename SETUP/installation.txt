@@ -1,9 +1,8 @@
 Instructions for Installing/Upgrading the Open Library System website code
 
 The instructions in this file assume that you're using a release tarball from
-OLS's Project Page on SourceForge:
-    http://sourceforge.net/projects/openls/
-If you're installing/upgrading from CVS, it's trickier.
+the github.com project:
+    https://github.com/DistributedProofreaders/dpcatalog
 
 =======================================================================
 Installing from scratch
@@ -71,9 +70,13 @@ If you're upgrading from a previous version, see the upgrade section.
             quit;
 
 --- Unpack the OLS code.
-        Somewhere within your server's document hierarchy (possibly, though not
-        necessarily, in the document root) unpack the OLS code. Here, we will
-        assume a directory under the document root named 'ols'.
+        Unpack the OLS code and move the src/ directory somewhere within your
+        server's document hierarchy (possibly, though not necessarily, in the
+        document root). Here, we will assume a directory under the document
+        root named 'ols'.
+
+        Only the contents of the src/ directory should be exposed via the web
+        server.
 
 --- Configure the OLS code (with site-specific settings).
         This requires manual editing of the values in:
@@ -82,10 +85,12 @@ If you're upgrading from a previous version, see the upgrade section.
         Follow the instructions given in those files.
 
 --- Create the tables of the OLS database.
+        You may need to update the $relPath variable at the top of the
+        install_db.php file to point to the location of the OLS src/
+        directory you unpacked above.
+
         cd SETUP
         php -f install_db.php
-
---- Move the SETUP directory out of your web server's document hierarchy.
 
 --- At this point, your OLS site should be functional.
         Try visiting it via your browser.

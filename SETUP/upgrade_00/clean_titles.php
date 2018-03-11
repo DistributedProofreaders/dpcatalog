@@ -1,5 +1,5 @@
 <?php
-$relPath="../../includes/";
+$relPath="../../../includes/";
 include_once($relPath.'common.inc');
 
 // NOTES:
