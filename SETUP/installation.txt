@@ -79,10 +79,16 @@ If you're upgrading from a previous version, see the upgrade section.
         server.
 
 --- Configure the OLS code (with site-specific settings).
-        This requires manual editing of the values in:
-            includes/config.inc
-            includes/udb_user.php
-        Follow the instructions given in those files.
+        Make an editable copy of SETUP/configuration.sh, and put it outside
+        your webserver's document hierarchy.
+
+        Modify your copy of configuration.sh as appropriate. Details about each
+        parameter are included in configuration.sh.
+
+        Run:
+            SETUP/configure path-to-modified-configuration.sh path-to-code-dir
+        The configure script will use your modified configuration.sh to update
+        the code with your site-specific settings.
 
 --- Create the tables of the OLS database.
         You may need to update the $relPath variable at the top of the
