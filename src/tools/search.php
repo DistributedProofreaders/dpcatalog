@@ -163,5 +163,3 @@ function highlight_search_term($string, $searchterm)
 }
 
 // vim: sw=4 ts=4 expandtab
-?>
-
