@@ -53,4 +53,3 @@ function show_navbar( $active = 'home', $display = TRUE, $home_only = FALSE, $ex
 
     return $navblock;
 }
-?>

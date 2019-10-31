@@ -48,5 +48,3 @@ $page->SetParameter ("BuildTime",       script_end_time($starttime));
 $page->CreatePage();
 
 // vim: sw=4 ts=4 expandtab
-?>
-

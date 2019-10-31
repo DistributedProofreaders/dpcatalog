@@ -271,5 +271,3 @@ function scanDirectoryImages($directory, array $exts = array('jpg', 'png'))
 }
 
 // vim: sw=4 ts=4 expandtab
-?>
-

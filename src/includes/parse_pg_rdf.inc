@@ -102,4 +102,3 @@ function parse_pg_catalog_rdf($pg_id, $pg_catalog_dir)
 }
 
 // vim: sw=4 ts=4 expandtab
-

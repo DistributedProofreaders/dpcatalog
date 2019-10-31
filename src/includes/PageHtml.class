@@ -29,4 +29,3 @@ class HtmlTemplate
         echo $this->html;
     }
 }
-?>
