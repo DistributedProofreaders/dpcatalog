@@ -77,4 +77,10 @@
     expressly disclaimed to the fullest extent permitted by law.")
     . "</p>";
 
+    // Blacklisted projects
+    // To prevent projects from being downloaded, or their images displayed,
+    // add them to this array. Key should be the projectid and the value can
+    // be any value, such as a string as to why it is blacklsited.
+    $blacklist_projects = array();
+
 // vim: sw=4 ts=4 expandtab

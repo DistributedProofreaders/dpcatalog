@@ -97,4 +97,15 @@ function validate_projectID($param_name, $value, $allownull = FALSE)
     ));
 }
 
+/*
+* Check if a project has been blacklisted.
+*
+* @param string $projectid (project to check for blacklisting status)
+*/
+function is_project_blacklisted($projectid)
+{
+    global $blacklist_projects;
+    return isset($blacklist_projects[$projectid]);
+}
+
 // vim: sw=4 ts=4 expandtab

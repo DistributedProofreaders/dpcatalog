@@ -21,6 +21,10 @@ $db_Connection = new dbConnect()
 
 $qid = mysqli_real_escape_string($db_Connection->connection,$id);
 
+// If the project is blacklisted, pretend this doesn't exist
+if(is_project_blacklisted($id))
+    $qid = 'BLACKLIST';
+
 $sql = "SELECT
         page_image_location
         FROM catalog
