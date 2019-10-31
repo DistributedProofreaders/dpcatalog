@@ -15,7 +15,7 @@ function get_node_info($xml, $xpath, $output_separator = PHP_EOL)
     $info = '';
     $nodes = $xml->xpath($xpath);
 
-    if ( $nodes === FALSE ) { continue; }
+    if ( $nodes === FALSE ) { return $info; }
     else
     {
         foreach ($nodes as $node)

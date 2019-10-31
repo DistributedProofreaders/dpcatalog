@@ -147,7 +147,7 @@ function displaybiblio ( $id, $pg_catalog_dir = NULL, $parent_url, $parent_name,
     // If the PG catalog directory isn't set, don't make an attempt
     if ( $pg_catalog_dir === NULL )
     {
-        continue;
+        return $searchResults;
     }
     // Otherwise, attempt to pull the PG rdf info
     else
