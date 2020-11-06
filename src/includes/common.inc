@@ -50,10 +50,6 @@ require_once($relPath.'PageHtml.class');    // Page templating functions
 require_once($relPath.'PageControls.inc');  // Page navigation control code
 require_once($relPath.'stats.inc');         // Site stats functions
 
-// Undo magic quotes. This function enables the code to operate identically
-// regardless of the setting of magic_quotes_gpc.
-undo_all_magic_quotes();
-
 // ==========================================================================
 
 /*
