@@ -45,7 +45,7 @@ $page->CreatePage();
 * @return string                  (HTML)
 */
 
-function displaybiblio ( $id, $pg_catalog_dir = NULL, $parent_url, $parent_name, $parent_abbr )
+function displaybiblio ( $id, $pg_catalog_dir, $parent_url, $parent_name, $parent_abbr )
 {
     // Connect to database
     $db_Connection = new dbConnect()
