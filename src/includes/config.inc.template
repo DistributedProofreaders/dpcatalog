@@ -6,7 +6,7 @@
 // the values appropriate to the local installation.
 
     // Character set
-    $charset = 'ISO-8859-1';
+    $charset = 'UTF-8';
 
     // Name of this site
     $site_name = _("<<SITE_NAME>>");
